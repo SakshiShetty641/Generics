@@ -12,7 +12,7 @@ public class FindMaxValue {
 	 * @param a1 : First value to compare
 	 * @param a2 : Second value to compare
 	 * @param a3 : Third value to compare
-	 * @return
+	 * @return max : Maximum of three integers
 	 */
 	public static Integer maxOfInteger(Integer a1, Integer a2, Integer a3) {
 		Integer max = a1;
