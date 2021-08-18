@@ -1,4 +1,6 @@
 package com.bridgelabz;
+import java.util.Arrays;
+
 /**
  * Purpose - To find maximum value using generics
  * @author - Sakshi Shetty
@@ -7,37 +9,31 @@ package com.bridgelabz;
  */
 public class FindMaxValue<T extends Comparable<T>> {
 
-	T a1, a2, a3;
+	T[] elements;
 
-	public FindMaxValue(T a1, T a2, T a3) {
-		this.a1 = a1;
-		this.a2 = a2;
-		this.a3 = a3;
+	public FindMaxValue(T[] elements) {
+		this.elements = elements;
 	}
 
 	/**
-	 * Generic method to compare any type of data and find maximum
-	 * @param a1 : First value to compare
-	 * @param a2 : Second value to compare
-	 * @param a3 : Third value to compare
+	 * Generic method to store values in array and return maximum value.
+	 * @param elements
 	 * @return max : Maximum of three values
 	 */
-	public static <T extends Comparable<T>> T maxOfValues(T a1, T a2, T a3) {
-		T max = a1;
-		if (a2.compareTo(max) > 0)
-			max = a2;
-		if (a3.compareTo(max) > 0)
-			max = a3;
+	public static <T extends Comparable<T>> T maxOfValues(T[] elements) {
+		Arrays.sort(elements);
+		int lenght = elements.length;
+		T max = elements[lenght - 1];
 		return max;
 	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the program to find maximum value using generics");
-		Integer a1 = 20, a2 = 8, a3 = 12;
-		System.out.println("The Maximum between three integers is : " + maxOfValues(a1, a2, a3));
-		Float f1 = 1.5f, f2 = 8.2f, f3 = 6.4f;
-		System.out.println("The Maximum between three float is : " + maxOfValues(f1, f2, f3));
-		String s1 = "abc", s2 = "pqr", s3 = "xyz";
-		System.out.println("The Maximum between three String is : " + maxOfValues(s1, s2, s3));
+		Integer[] intMax = { 10, 24, 68, 80, 42, 46, 12, 58 };
+		System.out.println("The Maximum between three integers is : " + maxOfValues(intMax));
+		Float[] floatMax = { 1.4f, 87.3f, 81.8f, 40.2f, 4.6f };
+		System.out.println("The Maximum between three float is : " + maxOfValues(floatMax));
+		String[] stringMax = { "ABC", "IJK", "PQR", "BCD", "MNO", "LMN", "RST", "XYZ" };
+		System.out.println("The Maximum between three String is : " + maxOfValues(stringMax));
 	}
 }
