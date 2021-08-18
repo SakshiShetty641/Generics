@@ -38,6 +38,6 @@ public class FindMaxValue<T extends Comparable<T>> {
 		Float f1 = 1.5f, f2 = 8.2f, f3 = 6.4f;
 		System.out.println("The Maximum between three float is : " + maxOfValues(f1, f2, f3));
 		String s1 = "abc", s2 = "pqr", s3 = "xyz";
-		System.out.println("The Maximum between three float is : " + maxOfValues(s1, s2, s3));
+		System.out.println("The Maximum between three String is : " + maxOfValues(s1, s2, s3));
 	}
 }
